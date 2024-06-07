@@ -1,6 +1,7 @@
 <template>
+  <img alt="Cloudoor logo" src="./assets/circle.svg" width="320px" style="margin-bottom: 10px;">
   <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <HelloWorld :msg="'Welcome to your ' + name + ' application'"/>
 </template>
 
 <script>
@@ -10,7 +11,12 @@ export default {
   name: 'App',
   components: {
     HelloWorld
-  }
+  },
+  data(){
+    return {
+      name: process.env.VUE_APP_NAME
+    }
+  },
 }
 </script>
 
